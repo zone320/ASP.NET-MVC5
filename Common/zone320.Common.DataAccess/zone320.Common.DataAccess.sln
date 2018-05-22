@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zone320.Common.DataAccess", "zone320.Common.DataAccess\zone320.Common.DataAccess.csproj", "{F4037624-8003-44E8-8754-1AED907DB461}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zone320.Common.DataAccess", "zone320.Common.DataAccess\zone320.Common.DataAccess.csproj", "{37FEDCAC-0B3F-4826-A993-9F989BFAC991}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F4037624-8003-44E8-8754-1AED907DB461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4037624-8003-44E8-8754-1AED907DB461}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4037624-8003-44E8-8754-1AED907DB461}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4037624-8003-44E8-8754-1AED907DB461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37FEDCAC-0B3F-4826-A993-9F989BFAC991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37FEDCAC-0B3F-4826-A993-9F989BFAC991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37FEDCAC-0B3F-4826-A993-9F989BFAC991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37FEDCAC-0B3F-4826-A993-9F989BFAC991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CF4D93E7-3394-4A79-86E0-02A2728509EA}
+		SolutionGuid = {9DB9EF06-8B9D-4587-B4BF-7A841DC42C85}
 	EndGlobalSection
 EndGlobal

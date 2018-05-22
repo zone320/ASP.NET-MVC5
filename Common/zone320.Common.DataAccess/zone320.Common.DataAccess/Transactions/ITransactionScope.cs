@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace zone320.Common.DataAccess
+namespace zone320.Common.DataAccess.Transactions
 {
-    public class Class1
+    public interface ITransactionScope : IDisposable
     {
+        void Complete();
     }
 }
