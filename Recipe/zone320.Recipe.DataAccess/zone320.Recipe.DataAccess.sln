@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zone320.Recipe.DataAccess", "zone320.Recipe.DataAccess\zone320.Recipe.DataAccess.csproj", "{214EA688-6FA2-4F8F-881E-062FC784AB48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{214EA688-6FA2-4F8F-881E-062FC784AB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214EA688-6FA2-4F8F-881E-062FC784AB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214EA688-6FA2-4F8F-881E-062FC784AB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214EA688-6FA2-4F8F-881E-062FC784AB48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD53E44B-0C78-4175-9F30-4127E891E942}
+	EndGlobalSection
+EndGlobal
