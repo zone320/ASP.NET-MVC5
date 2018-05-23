@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>4ce7e906-6b10-4e6b-9c7d-183e4b15ef55</ProjectGuid>
+    <ProjectGuid>{B3DED21E-F077-4793-AF7A-7E045094D25C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>zone320.Recipe.Service</RootNamespace>
@@ -30,24 +30,58 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Implementations\RecipeInstructionService.cs" />
+    <Compile Include="Implementations\RecipeIngredientService.cs" />
+    <Compile Include="Implementations\RecipeService.cs" />
+    <Compile Include="Implementations\RecipeTypeService.cs" />
+    <Compile Include="Interfaces\IRecipeInstructionService.cs" />
+    <Compile Include="Interfaces\IRecipeIngredientService.cs" />
+    <Compile Include="Interfaces\IRecipeService.cs" />
+    <Compile Include="Interfaces\IRecipeTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\RecipeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecipeResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\zone320.Common.DataAccess\zone320.Common.DataAccess\zone320.Common.DataAccess.csproj">
+      <Project>{37fedcac-0b3f-4826-a993-9f989bfac991}</Project>
+      <Name>zone320.Common.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\zone320.Common.Utility\zone320.Common.Utility\zone320.Common.Utility.csproj">
+      <Project>{755b4894-0bbc-426c-83c0-37f11e32c04e}</Project>
+      <Name>zone320.Common.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zone320.Recipe.DataAccess\zone320.Recipe.DataAccess\zone320.Recipe.DataAccess.csproj">
+      <Project>{f0058d2a-74e6-4602-be12-b590bb3c879f}</Project>
+      <Name>zone320.Recipe.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NuGetReferenceHintPathRewrite.targets" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\RecipeResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecipeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+  <Import Project="NuGetReferenceHintPathRewrite.targets" />
+</Project>
