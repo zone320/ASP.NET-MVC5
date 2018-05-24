@@ -1,14 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using zone320.Common.Tests;
+using FluentAssertions;
 
 namespace zone320.User.Service.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class UserBaseTest : BaseTest
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
+        //TODO:
     }
 }

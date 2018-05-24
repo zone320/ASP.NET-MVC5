@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace zone320.User.Service
+namespace zone320.User.Service.Interfaces
 {
-    public class Class1
+    public interface IUserService
     {
+        //TODO:
     }
 }

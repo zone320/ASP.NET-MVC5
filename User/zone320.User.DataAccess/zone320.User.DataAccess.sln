@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zone320.User.DataAccess", "zone320.User.DataAccess\zone320.User.DataAccess.csproj", "{E7B44EC1-2202-472E-8907-13971F3B862D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zone320.Common.DataAccess", "..\..\Common\zone320.Common.DataAccess\zone320.Common.DataAccess\zone320.Common.DataAccess.csproj", "{37FEDCAC-0B3F-4826-A993-9F989BFAC991}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E7B44EC1-2202-472E-8907-13971F3B862D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7B44EC1-2202-472E-8907-13971F3B862D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7B44EC1-2202-472E-8907-13971F3B862D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37FEDCAC-0B3F-4826-A993-9F989BFAC991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37FEDCAC-0B3F-4826-A993-9F989BFAC991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37FEDCAC-0B3F-4826-A993-9F989BFAC991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37FEDCAC-0B3F-4826-A993-9F989BFAC991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

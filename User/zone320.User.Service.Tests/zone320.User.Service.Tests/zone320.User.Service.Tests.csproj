@@ -38,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentAssertions, Version=4.19.3.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.19.3\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.19.3.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.19.3\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -46,13 +52,43 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Implementations\UserServiceTest.cs" />
+    <Compile Include="UserBaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="NuGetReferenceHintPathRewrite.targets" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\zone320.Common.DataAccess\zone320.Common.DataAccess\zone320.Common.DataAccess.csproj">
+      <Project>{37fedcac-0b3f-4826-a993-9f989bfac991}</Project>
+      <Name>zone320.Common.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\zone320.Common.Tests\zone320.Common.Tests\zone320.Common.Tests.csproj">
+      <Project>{da9ab887-2266-4850-85e4-022ab64972a1}</Project>
+      <Name>zone320.Common.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\zone320.Common.Utility\zone320.Common.Utility\zone320.Common.Utility.csproj">
+      <Project>{755b4894-0bbc-426c-83c0-37f11e32c04e}</Project>
+      <Name>zone320.Common.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zone320.User.DataAccess\zone320.User.DataAccess\zone320.User.DataAccess.csproj">
+      <Project>{e7b44ec1-2202-472e-8907-13971f3b862d}</Project>
+      <Name>zone320.User.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zone320.User.Service\zone320.User.Service\zone320.User.Service.csproj">
+      <Project>{53f8dde3-f63a-41d4-b59e-bfecc6f7fdab}</Project>
+      <Name>zone320.User.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -64,4 +100,5 @@
     <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets'))" />
   </Target>
   <Import Project="..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.1.2.0\build\net45\MSTest.TestAdapter.targets')" />
+  <Import Project="NuGetReferenceHintPathRewrite.targets" />
 </Project>
