@@ -44,10 +44,12 @@
     <Compile Include="Implementations\RecipeIngredientService.cs" />
     <Compile Include="Implementations\RecipeService.cs" />
     <Compile Include="Implementations\RecipeTypeService.cs" />
+    <Compile Include="Implementations\SearchService.cs" />
     <Compile Include="Interfaces\IRecipeInstructionService.cs" />
     <Compile Include="Interfaces\IRecipeIngredientService.cs" />
     <Compile Include="Interfaces\IRecipeService.cs" />
     <Compile Include="Interfaces\IRecipeTypeService.cs" />
+    <Compile Include="Interfaces\ISearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\RecipeResources.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -8,6 +8,7 @@ using zone320.Recipe.DataAccess.Recipe.DTO;
 
 namespace zone320.Recipe.Service.Interfaces
 {
+    //TODO: add services for recipe favorites and comments
     public interface IRecipeService
     {
         /// <summary>

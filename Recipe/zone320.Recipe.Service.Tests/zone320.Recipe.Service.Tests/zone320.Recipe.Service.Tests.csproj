@@ -63,6 +63,7 @@
     <Compile Include="Implementations\RecipeIngredientServiceTest.cs" />
     <Compile Include="Implementations\RecipeTypeServiceTest.cs" />
     <Compile Include="Implementations\RecipeServiceTest.cs" />
+    <Compile Include="Implementations\SearchServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecipeBaseTest.cs" />
   </ItemGroup>
