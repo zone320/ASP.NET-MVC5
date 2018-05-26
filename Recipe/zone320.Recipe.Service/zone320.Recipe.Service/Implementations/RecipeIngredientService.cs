@@ -15,7 +15,7 @@ namespace zone320.Recipe.Service.Implementations
 {
     public class RecipeIngredientService : IRecipeIngredientService
     {
-        private RecipeIngredientDA recipeIngredientDA;
+        private readonly RecipeIngredientDA recipeIngredientDA;
 
         public RecipeIngredientService(RecipeIngredientDA recipeIngredientDA)
         {
@@ -25,7 +25,7 @@ namespace zone320.Recipe.Service.Implementations
         public RecipeIngredientDto GetIngredient(Guid recipeIngredientId)
         {
             var result = this.recipeIngredientDA.Load(recipeIngredientId);
-            if (result == null || result.DeleteDate.HasValue)
+            if (result?.DeleteDate.HasValue != false)
             {
                 result = new RecipeIngredientDto() { HasData = false };
             }

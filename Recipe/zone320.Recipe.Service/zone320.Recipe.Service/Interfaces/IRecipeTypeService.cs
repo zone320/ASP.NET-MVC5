@@ -12,12 +12,14 @@ namespace zone320.Recipe.Service.Interfaces
         /// <summary>
         /// Gets recipe type
         /// </summary>
+        /// <param name="recipeTypeId"></param>
         /// <returns></returns>
         RecipeTypeDto GetRecipeType(Guid recipeTypeId);
 
         /// <summary>
         /// Gets recipe type
         /// </summary>
+        /// <param name="name"></param>
         /// <returns></returns>
         RecipeTypeDto GetRecipeType(string name);
 

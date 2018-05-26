@@ -15,7 +15,7 @@ namespace zone320.Recipe.Service.Implementations
 {
     public class RecipeInstructionService : IRecipeInstructionService
     {
-        private RecipeInstructionDA recipeInstructionDA;
+        private readonly RecipeInstructionDA recipeInstructionDA;
 
         public RecipeInstructionService(RecipeInstructionDA recipeInstructionDA)
         {
@@ -25,7 +25,7 @@ namespace zone320.Recipe.Service.Implementations
         public RecipeInstructionDto GetInstruction(Guid recipeInstructionId)
         {
             var result = this.recipeInstructionDA.Load(recipeInstructionId);
-            if (result == null || result.DeleteDate.HasValue)
+            if (result?.DeleteDate.HasValue != false)
             {
                 result = new RecipeInstructionDto() { HasData = false };
             }

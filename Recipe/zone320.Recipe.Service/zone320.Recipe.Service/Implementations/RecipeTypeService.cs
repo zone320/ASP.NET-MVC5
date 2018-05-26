@@ -11,7 +11,7 @@ namespace zone320.Recipe.Service.Implementations
 {
     public class RecipeTypeService : IRecipeTypeService
     {
-        private RecipeTypeDA recipeTypeDA;
+        private readonly RecipeTypeDA recipeTypeDA;
 
         public RecipeTypeService(RecipeTypeDA recipeTypeDA)
         {
@@ -21,7 +21,7 @@ namespace zone320.Recipe.Service.Implementations
         public RecipeTypeDto GetRecipeType(Guid recipeTypeId)
         {
             var result = this.recipeTypeDA.Load(recipeTypeId);
-            if (result == null || result.DeleteDate.HasValue)
+            if (result?.DeleteDate.HasValue != false)
             {
                 result = new RecipeTypeDto() { HasData = false };
             }
@@ -32,7 +32,7 @@ namespace zone320.Recipe.Service.Implementations
         public RecipeTypeDto GetRecipeType(string name)
         {
             var result = this.recipeTypeDA.Load(name);
-            if (result == null || result.DeleteDate.HasValue)
+            if (result?.DeleteDate.HasValue != false)
             {
                 result = new RecipeTypeDto() { HasData = false };
             }

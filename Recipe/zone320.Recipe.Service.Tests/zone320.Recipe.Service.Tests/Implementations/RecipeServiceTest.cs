@@ -49,7 +49,7 @@ namespace zone320.Recipe.Service.Tests.Implementations
             items.Should().NotBeNull();
             items.Should().BeEmpty();
 
-            recipeTypeId = this.typeService.GetRecipeTypes().FirstOrDefault().RecipeTypeId;
+            recipeTypeId = this.typeService.GetRecipeTypes().FirstOrDefault()?.RecipeTypeId ?? default(Guid);
 
             this.CreateRecipe(recipeTypeId);
             this.CreateRecipe(recipeTypeId);
@@ -113,7 +113,7 @@ namespace zone320.Recipe.Service.Tests.Implementations
             var item = this.CreateRecipe();
             item.Title += "updated";
             item.Description += "updated";
-            item.RecipeTypeId = this.typeService.GetRecipeTypes().Where(x => x.RecipeTypeId != item.RecipeTypeId).FirstOrDefault().RecipeTypeId;
+            item.RecipeTypeId = this.typeService.GetRecipeTypes().Find(x => x.RecipeTypeId != item.RecipeTypeId).RecipeTypeId;
             item.Author += "updated";
             item.AuthorWebsite += "updated";
 

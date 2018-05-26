@@ -24,16 +24,18 @@ namespace zone320.Recipe.Service.Tests
         {
             if (!recipeTypeId.HasValue)
             {
-                recipeTypeId = this.typeService.GetRecipeTypes().FirstOrDefault().RecipeTypeId;
+                recipeTypeId = this.typeService.GetRecipeTypes().FirstOrDefault()?.RecipeTypeId;
             }
 
-            var item = new RecipeDto();
-            item.HasData = true;
-            item.Title = this.GetRandomString(50);
-            item.Description = this.GetRandomString(50);
-            item.RecipeTypeId = recipeTypeId.Value;
-            item.Author = this.GetRandomString(50);
-            item.AuthorWebsite = this.GetRandomString(50);
+            var item = new RecipeDto
+            {
+                HasData = true,
+                Title = this.GetRandomString(50),
+                Description = this.GetRandomString(50),
+                RecipeTypeId = recipeTypeId.Value,
+                Author = this.GetRandomString(50),
+                AuthorWebsite = this.GetRandomString(50)
+            };
 
             return item;
         }
@@ -58,11 +60,13 @@ namespace zone320.Recipe.Service.Tests
                 recipeId = this.CreateRecipe().RecipeId;
             }
 
-            var item = new RecipeIngredientDto();
-            item.HasData = true;
-            item.RecipeId = recipeId.Value;
-            item.Sequence = this.GetRandomNumber();
-            item.Ingredient = this.GetRandomString(250);
+            var item = new RecipeIngredientDto
+            {
+                HasData = true,
+                RecipeId = recipeId.Value,
+                Sequence = this.GetRandomNumber(),
+                Ingredient = this.GetRandomString(250)
+            };
 
             return item;
         }
@@ -87,11 +91,13 @@ namespace zone320.Recipe.Service.Tests
                 recipeId = this.CreateRecipe().RecipeId;
             }
 
-            var item = new RecipeInstructionDto();
-            item.HasData = true;
-            item.RecipeId = recipeId.Value;
-            item.Sequence = this.GetRandomNumber();
-            item.Instruction = this.GetRandomString(250);
+            var item = new RecipeInstructionDto
+            {
+                HasData = true,
+                RecipeId = recipeId.Value,
+                Sequence = this.GetRandomNumber(),
+                Instruction = this.GetRandomString(250)
+            };
 
             return item;
         }

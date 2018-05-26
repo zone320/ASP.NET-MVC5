@@ -15,9 +15,9 @@ namespace zone320.Recipe.Service.Implementations
 {
     public class RecipeService : IRecipeService
     {
-        private RecipeDA recipeDA;
-        private IRecipeIngredientService recipeIngredientService;
-        private IRecipeInstructionService recipeInstructionService;
+        private readonly RecipeDA recipeDA;
+        private readonly IRecipeIngredientService recipeIngredientService;
+        private readonly IRecipeInstructionService recipeInstructionService;
 
         public RecipeService(RecipeDA recipeDA, IRecipeIngredientService recipeIngredientService, IRecipeInstructionService recipeInstructionService)
         {
@@ -29,7 +29,7 @@ namespace zone320.Recipe.Service.Implementations
         public RecipeDto GetRecipe(Guid recipeId)
         {
             var result = this.recipeDA.Load(recipeId);
-            if (result == null || result.DeleteDate.HasValue)
+            if (result?.DeleteDate.HasValue != false)
             {
                 result = new RecipeDto() { HasData = false };
             }
@@ -57,6 +57,9 @@ namespace zone320.Recipe.Service.Implementations
                 using (ITransactionScope scope = new TransactionScopeWrapper())
                 {
                     result.Result = this.recipeDA.Save(saveItem, userId);
+
+                    //TODO: save ingredients and instructions too
+
                     scope.Complete();
                 }
             }
@@ -94,7 +97,7 @@ namespace zone320.Recipe.Service.Implementations
             using (ITransactionScope scope = new TransactionScopeWrapper())
             {
                 this.recipeDA.Delete(recipeId, userId);
-                
+
                 this.recipeIngredientService.DeleteAll(recipeId, userId);
                 this.recipeInstructionService.DeleteAll(recipeId, userId);
 
