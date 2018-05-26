@@ -13,8 +13,8 @@ namespace zone320.Common.DataAccess.Tests
     [TestClass]
     public class BaseDATest : BaseTest
     {
-        private BaseDA dataAccess = new BaseDA();
-        private string ConnectionStringKey = "TestDatabase";
+        private readonly BaseDA dataAccess = new BaseDA();
+        private readonly string ConnectionStringKey = "TestDatabase";
 
         [TestInitialize]
         public void RepositoryTestInitialize()
@@ -32,7 +32,6 @@ namespace zone320.Common.DataAccess.Tests
             this.dataAccess.SetConnectionString(string.Empty);
             connection = this.dataAccess.Connection;
             connection.ConnectionString.Should().Be(string.Empty);
-
 
             var connectionString = ConfigurationManager.ConnectionStrings[this.ConnectionStringKey].ConnectionString;
             this.dataAccess.SetConnectionString(connectionString);
@@ -102,7 +101,7 @@ namespace zone320.Common.DataAccess.Tests
                 TestTableId = id,
                 TestName = this.GetRandomString(50),
                 TestValue = this.GetRandomString(50),
-                UserId = this.UserId
+                this.UserId
             });
 
             var item = this.GetTestTable(id);
@@ -163,7 +162,6 @@ namespace zone320.Common.DataAccess.Tests
 
             results.Should().NotBeNull();
             results.Should().BeEmpty();
-
 
             var id = this.CreateTestTable();
             results = this.dataAccess.Query<TestTableDto>("spTestTableGetTestTable", new

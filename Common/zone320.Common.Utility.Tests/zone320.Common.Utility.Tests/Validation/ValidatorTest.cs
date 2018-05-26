@@ -11,7 +11,7 @@ namespace zone320.Common.Utility.Tests.Validation
     [TestClass]
     public class ValidatorTest : BaseTest
     {
-        private string fieldName = "field name";
+        private readonly string fieldName = "field name";
 
         [TestMethod]
         public void GuidCheck()
@@ -86,7 +86,6 @@ namespace zone320.Common.Utility.Tests.Validation
             this.AssertEmpty(results);
             results = Validator.FieldLengthCheck(3, fieldName, minValue, maxValue, false);
             this.AssertEmpty(results);
-
 
             maxValue = 2;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zone320.Common.DataAccess.SQL
 {
-    public class SqlExceptions
+    public static class SqlExceptions
     {
         public static int Deadlock = 1205;
         public static int Timeout = -2;

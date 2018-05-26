@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zone320.Common.DataAccess.SQL
 {
-    public class SqlCommands
+    public static class SqlCommands
     {
         public static string CreateDatabase = "create database ";
         public static string AlterDatabase = "alter database ";

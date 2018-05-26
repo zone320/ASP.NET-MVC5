@@ -19,7 +19,7 @@ namespace zone320.Common.Utility.DTO
             this.IsSuccess = true;
             this.ErrorMessages = errorMessages;
 
-            if (this.ErrorMessages != null && this.ErrorMessages.Count > 0)
+            if (this.ErrorMessages?.Count > 0)
             {
                 this.IsSuccess = false;
             }

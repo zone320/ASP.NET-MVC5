@@ -9,13 +9,15 @@ namespace zone320.Common.DataAccess.Transactions
 {
     public class TransactionScopeWrapper : ITransactionScope
     {
-        readonly TransactionScope transactionScope;
-        readonly TransactionOptions transactionOptions;
+        private readonly TransactionScope transactionScope;
+        private readonly TransactionOptions transactionOptions;
 
         public TransactionScopeWrapper()
         {
-            transactionOptions = new TransactionOptions();
-            transactionOptions.IsolationLevel = IsolationLevel.ReadCommitted;
+            transactionOptions = new TransactionOptions
+            {
+                IsolationLevel = IsolationLevel.ReadCommitted
+            };
             transactionScope = new TransactionScope(TransactionScopeOption.Required, transactionOptions);
         }
 

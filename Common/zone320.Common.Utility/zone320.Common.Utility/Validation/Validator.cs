@@ -7,7 +7,7 @@ using zone320.Common.Utility.Resources;
 
 namespace zone320.Common.Utility.Validation
 {
-    public class Validator
+    public static class Validator
     {
         /// <summary>
         /// Checks if guid is empty or required
@@ -61,7 +61,6 @@ namespace zone320.Common.Utility.Validation
                         errorMessages.Add(string.Format(ValidationResources.MustBeCharacter, fieldName, maxLength));
                     }
                 }
-
             }
             else if (isFieldRequired)
             {

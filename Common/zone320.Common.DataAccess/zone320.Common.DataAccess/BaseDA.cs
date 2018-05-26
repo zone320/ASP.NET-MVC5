@@ -198,7 +198,7 @@ namespace zone320.Common.DataAccess
         {
             return id == Guid.Empty;
         }
-        
+
         /// <summary>
         /// Compares two objects for equality with optional excluded properties
         /// </summary>
@@ -219,7 +219,7 @@ namespace zone320.Common.DataAccess
                         var property1 = prop.GetValue(item1, null);
                         var property2 = prop.GetValue(item2, null);
 
-                        result = (property1 != null && !property1.Equals(property2)) || (property2 != null && !property2.Equals(property1));
+                        result = (property1?.Equals(property2) == false) || (property2?.Equals(property1) == false);
                         if (result)
                         {
                             break;

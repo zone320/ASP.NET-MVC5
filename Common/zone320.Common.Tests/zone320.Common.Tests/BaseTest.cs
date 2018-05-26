@@ -19,9 +19,11 @@ namespace zone320.Common.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            var transactionOptions = new TransactionOptions();
-            transactionOptions.IsolationLevel = IsolationLevel.ReadCommitted;
-            transactionOptions.Timeout = new TimeSpan(0, 5, 0);
+            var transactionOptions = new TransactionOptions
+            {
+                IsolationLevel = IsolationLevel.ReadCommitted,
+                Timeout = new TimeSpan(0, 5, 0)
+            };
 
             transactionScope = new TransactionScope(TransactionScopeOption.RequiresNew, transactionOptions, TransactionScopeAsyncFlowOption.Enabled);
 
@@ -37,7 +39,8 @@ namespace zone320.Common.Tests
             transactionScope.Dispose();
         }
 
-        private string RandomStringCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+        private readonly string RandomStringCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+
         /// <summary>
         /// Gets a random string of an optional length
         /// </summary>
